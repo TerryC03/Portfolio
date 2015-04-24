@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+	background-image: url("http://hdwallpapersfit.com/wp-content/uploads/2015/03/sandy-beach-wallpaper.jpg");
+}
+	.form_error{
+		color: #f00;
+		margin-left: 12px;
+		font-size: smaller;
+}	
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+Welcome to the <i>Bulls and Cows</i> UI!<p>
+Click the "Start Game" Button to generate a 4-digit number.<p>
+The goal of the game is to correctly guess the array of numbers.<p>
+<b>Bulls (TWO Green checks)</b> indicate the correct number(s) and position in the array;<p>
+<b>Cows (ONE Green check)</b> indicate ONLY the correct number(s) that exist in the array;<p>
+
+
+<h2 id="prompt"></h2>
+
+<input type="button" id="click" value="Start Game"><p></p>
+
+<form id="game" method="post" action="javascript:void(0)">
+
+<label for="column1"> <b>Column 1: </b> </label>
+<input type="number" name="num1" id="num1" size="1" min="0" max="9" maxlength="1"><p></p>
+<h5 id="status1"></h5>
+
+<label for="column2"> <b>Column 2: </b> </label>
+<input type="number" name="num2" id="num2" size="1" min="0" max="9" maxlength="1"><p></p>
+<h5 id="status2"></h5>
+
+<label for="column3"> <b>Column 3: </b> </label>
+<input type="number" name="num3" id="num3" size="1" min="0" max="9" maxlength="1"><p></p>
+<h5 id="status3"></h5>
+
+<label for="column4"> <b>Column 4: </b> </label>
+<input type="number" name="num4" id="num4" size="1" min="0" max="9" maxlength="1"><p></p>
+<h5 id="status4"></h5>
+
+</form>
+<h1 id="win"></h1>
+
+<input type="button" id="check" value="Check Guesses">
+
+
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+<script src="bullsAndcows.js"></script>
+</body>
+</html>
