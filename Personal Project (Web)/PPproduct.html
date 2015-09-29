@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Nutritional Page</title>
+  
+  <style>
+html, body { 
+font-size: 30px;
+background-color:lightgray;
+} 
+#economicalDialog, #sportDialog,
+#pharmDialog{
+font-size: 15px;
+}
+#footer {
+text-align: center;
+}
+.form_error{
+		color: #f00;
+		margin-left: 12px;
+		font-size: smaller;
+}	
+
+</style>
+</head>
+<body>
+ 
+ <!-- Dialog information pertaining to modal window -->
+<div id="economicalDialog" title="Economical">
+	<p>The compositional percentage we recommend for this particular nutritional build<br>
+	is:<br> <b>Protein: 40%; Carbohydrates: 40%; Fats: 20%.</b><br>
+	This build is ideal for those who are light to moderately active.
+	The measurement procedures will be in standard quality.<br>
+	<b>Estimated Cost:</b><i> Lowest</i></p>
+</div>
+<div id="sportDialog" title="Sport">
+	<p>The compositional percentage we recommend for this particular nutritional build<br>
+	is:<br><b>Protein: 60%; Carbohydrates: 40%; Fats: 10%.</b><br>
+	This build is ideal for those who are highly moderately active to sports participation.
+	Also, all supplementation will be measured in "millis" (milliLiters, milliGrams, etc.)<br>
+	<b>Estimated Cost:</b><i> High</i></p>
+</div>
+<div id="pharmDialog" title="Pharmaceutical">
+	<p>This is not, necessary, for nutritional ratios but, rather, your choice of the ratio
+	via the above options. However, the grade of the formula will be significantly higher
+	and measured in "nanos" (nanoLiters, nanoGrams, etc.)<br>
+	<b>Estimated Cost:</b><i> Highest</i></p>
+</div>
+
+<h1 align="center">Nutritional Data (Beta Stage)</h1>
+
+<!-- Storing macronutrient information here -->
+	Please enter the amount in grams(g):<br>
+	<form id="form" method="post" action="javascript:void(0)">
+	Protein: <input id="protein" type="number" name="protein"><br>
+	Carbs: 	 <input id="carbs" type="number" name="carbs"><br>
+	Fats: 	 <input id="fats" type="number" name="fats"><br>
+	Or total calories:<br>
+	Calories: <input id="kcal" type="number" name="kcal">
+	<hr>
+	What is your desired ratio/quality?<br>
+	
+	Economical <button id="economical">?</button>  <input type="radio" name="choice" id="economical_rq" value="Economical"><br>
+	Sport <button id="sport">?</button> <input type="radio" name="choice" id="sport_rq" value="Sport"><br>
+	Pharmaceutical-Grade <button id="pharm">?</button> <input type="radio" name="choice" id="pharm_rq" value="Pharmaceutical"><br>
+	None <input type="radio" id="none" name="choice" value="None"><br>
+	<input type="button" id="calculate" value="Calculate">
+	</form>
+	
+	<!-- Plug-ins -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+  <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+ <script src="PPproduct.js"></script>
+</body>
+</html>

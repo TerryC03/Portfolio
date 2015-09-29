@@ -1,96 +1,112 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+  <meta charset="utf-8">
+  <title>Nutritional Page</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#economicalDialog" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+    
+    $( "#sportDialog" ).dialog({
+        autoOpen: false,
+        show: {
+          effect: "blind",
+          duration: 1000
+        },
+        hide: {
+          effect: "explode",
+          duration: 1000
+        }
+      });
+    
+    $( "#pharmDialog" ).dialog({
+        autoOpen: false,
+        show: {
+          effect: "blind",
+          duration: 1000
+        },
+        hide: {
+          effect: "explode",
+          duration: 1000
+        }
+      });
+    $( "#economical" ).click(function() {
+      $( "#economicalDialog" ).dialog( "open" );
+    });
+    $( "#sport" ).click(function() {
+        $( "#sportDialog" ).dialog( "open" );
+      });
+    $( "#pharm" ).click(function() {
+        $( "#pharmDialog" ).dialog( "open" );
+      });
+  });
+  </script>
+  <style>
+html, body { height:100%; 
+font-size: 20px;
+background-color:lightgray;
+} 
+#economicalDialog, #sportDialog,
+#pharmDialog{
+font-size: 15px;
+}
+#footer {
+text-align: center;
+}
+
+</style>
 </head>
 <body>
-<style>
-/*style the main menu*/
-.myMenu {
-	margin:0;
-	padding:0;
-}
+ 
+<div id="economicalDialog" title="Economical">
+	<p>The compositional percentage we recommend for this particular nutritional build<br>
+	is:<br> <b>Protein: 40%; Carbohydrates: 40%; Fats: 20%.</b><br>
+	This build is ideal for those who are light to moderately active.
+	The measurement procedures will be in standard quality.<br>
+	<b>Estimated Cost:</b><i> Lowest</i></p>
+</div>
+<div id="sportDialog" title="Sport">
+	<p>The compositional percentage we recommend for this particular nutritional build<br>
+	is:<br><b>Protein: 60%; Carbohydrates: 40%; Fats: 10%.</b><br>
+	This build is ideal for those who are highly moderately active to sports participation.
+	Also, all supplementation will be measured in "millis" (milliLiters, milliGrams, etc.)<br>
+	<b>Estimated Cost:</b><i> High</i></p>
+</div>
+<div id="pharmDialog" title="Pharmaceutical">
+	<p>This is not, necessary, for nutritional ratios but, rather, your choice of the ratio
+	via the above options. However, the grade of the formula will be significantly higher
+	and measured in "nanos" (nanoLiters, nanoGrams, etc.)<br>
+	<b>Estimated Cost:</b><i> Highest</i></p>
+</div>
 
-.myMenu li {
-	list-style:none;
-	float:left;
-	font:12px Arial, Helvetica, sans-serif #111;
-}
+<h1 align="center">Nutritional Data (Beta Stage)</h1>
 
-.myMenu li a:link, .myMenu li a:visited {
-	display:block;
-	text-decoration:none;
-	background-color:#09F;
-	padding: 0.5em 2em;
-	margin:0;
-	border-right: 1px solid #fff;
-	color:#111;
-}
-
-.myMenu li a:hover {
-	background-color:#0CF;	
-}
-
-/*style the sub menu*/
-.myMenu li ul {
-	position:absolute;
-	visibility:hidden;
-	border-top:1px solid #fff;
-	margin:0;
-	padding:0;
-}
-
-.myMenu li ul li {
-	display:inline;
-	float:none;
-}
-
-.myMenu li ul li a:link, .myMenu li ul li a:visited {
-	background-color:#09F;
-	width:auto;
-}
-
-.myMenu li ul li a:hover {
-	background-color:#0CF;	
-}
-</style>
-<ul class="myMenu">
-	<li><a href="#">menu item 1</a></li>
-    <li><a href="#">menu item 2</a>
-    	<ul>
-        	<li><a href="#">sub menu item 1</a></li>
-            <li><a href="#">sub menu item 2</a></li>
-            <li><a href="#">sub menu item 3</a></li>
-            <li><a href="#">sub menu item 4</a></li>
-        </ul>
-    </li>
-    <li><a href="#">menu item 3</a>
-       <ul>
-        	<li><a href="#">sub menu item 1</a></li>
-            <li><a href="#">sub menu item 2</a></li>
-            <li><a href="#">sub menu item 3</a></li>
-            <li><a href="#">sub menu item 4</a></li>
-        </ul>
-    </li>
-    <li><a href="#">menu item 4</a></li>
-    <li><a href="#">menu item 5</a></li>
-</ul>
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('.myMenu > li').bind('mouseover', openSubMenu);
-		$('.myMenu > li').bind('mouseout', closeSubMenu);
-		
-		function openSubMenu() {
-			$(this).find('ul').css('visibility', 'visible');	
-		};
-		
-		function closeSubMenu() {
-			$(this).find('ul').css('visibility', 'hidden');	
-		};
-				   
-	});
-</script>
+	Please enter the amount in grams(g):<br>
+	
+	Protein: <input type="number" name="protein"><br>
+	Carbs: 	 <input type="number" name="carbs"><br>
+	Fats: 	 <input type="number" name="fats"><br>
+	<hr>
+	What is your desired ratio/quality?<br>
+	
+	Economical <button id="economical">?</button>  <input type="radio" name="ratio" value="Economical"><br>
+	Sport <button id="sport">?</button> <input type="radio" name="ratio" value="Sport"><br>
+	Pharmaceutical-Grade <button id="pharm">?</button> <input type="radio" name="ratio" value="Pharmaceutical"><br>
+	
+ 
 </body>
 </html>

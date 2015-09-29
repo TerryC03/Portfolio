@@ -6,9 +6,8 @@
  'use strict';
  
 	$(function(){
-		$('#mainPage').tabs();
 		
-		//Products tab
+		
 		var width =720;
 		var animationSpeed = 1000;
 		var pause = 5000;
@@ -19,7 +18,6 @@
 		
 		var interval;
 		
-		//Conducts how the jquery slider moves
 		function startSlider(){
 		interval = setInterval(function(){
 			$slideContainer.animate({'margin-left': '-=' + width}, animationSpeed, function(){
@@ -32,8 +30,6 @@
 			}, pause);
 		}
 		
-		//Conducts how the jquery slider stops. It stops when the mouse
-		//is in the tab window itself
 		function stopSlider(){
 			clearInterval(interval);
 		}
